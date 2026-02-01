@@ -1,0 +1,165 @@
+:root {
+    --bg1: #667eea;
+    --bg2: #764ba2;
+    --card: #ffffff;
+    --text: #333;
+    --btn: #ff416c;
+}
+
+.dark {
+    --bg1: #0f2027;
+    --bg2: #203a43;
+    --card: #1e1e1e;
+    --text: #f1f1f1;
+    --btn: #ff4b2b;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+}
+
+/* Background */
+.bg {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, var(--bg1), var(--bg2));
+    z-index: -1;
+}
+
+/* Dark mode switch */
+.theme-switch {
+    position: fixed;
+    top: 18px;
+    right: 25px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.switch {
+    width: 64px;
+    height: 32px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.icon {
+    font-size: 16px;
+}
+
+/* Layout */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Card */
+.card {
+    width: 520px;
+    background: var(--card);
+    border-radius: 18px;
+    padding: 1px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+    background-image:
+        linear-gradient(var(--card), var(--card)),
+        linear-gradient(135deg, #667eea, #764ba2);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.card-header {
+    padding: 18px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 16px 16px 0 0;
+}
+
+.card-header.success {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Input */
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+/* Button */
+.btn {
+    margin-top: 18px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0 12px 25px rgba(255,75,43,0.45);
+    transform: translateY(-2px);
+}
+
+/* Result */
+.result-card {
+    display: none;
+}
+
+.stat {
+    background: #f1f1f1;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.dark .stat {
+    background: #2a2a2a;
+}
+
+/* Loader */
+.loader {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 4px solid rgba(255,255,255,0.4);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
