@@ -50,8 +50,8 @@ def predict():
 
     label_map = {
         0: "Hate",
-        1: "NO Hate",
-        2: "Offensive"
+        1: "Offensive",
+        2: "NO Hate"
     }
 
     return jsonify({
