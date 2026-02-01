@@ -49,9 +49,9 @@ def predict():
     pred = model.predict(vector)[0]
 
     label_map = {
-        0: "No Hate",
-        1: "Offensive",
-        2: "Hate"
+        0: "Hate",
+        1: "NO Hate",
+        2: "Offensive"
     }
 
     return jsonify({
